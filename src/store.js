@@ -1,39 +1,20 @@
 
 import { writable } from "svelte/store";
 
-
-const storedGamesPlayed = parseInt(localStorage.getItem("gamesPlayed"));
+let storedGamesPlayed = localStorage.getItem("gamesPlayed") === null ? 0 : localStorage.getItem("gamesPlayed");
 export const gamesPlayed = writable(storedGamesPlayed);
-gamesPlayed.subscribe(value => {
-    localStorage.setItem("gamesPlayed", parseInt(value) > 0 ? value : 0);
-});
 
-const storedWinPercentage = parseInt(localStorage.getItem("winPercentage"));
+let storedWinPercentage = localStorage.getItem("winPercentage") === null ? 0 : localStorage.getItem("winPercentage");
 export const winPercentage = writable(storedWinPercentage);
-winPercentage.subscribe(value => {
-    localStorage.setItem("winPercentage", parseInt(value) > 0 ? value : 0);
-});
 
-const storedGamesWon = parseInt(localStorage.getItem("gamesWon"));
+let storedGamesWon = localStorage.getItem("gamesWon") === null ? 0 : localStorage.getItem("gamesWon");
 export const gamesWon = writable(storedGamesWon);
-gamesWon.subscribe(value => {
-    localStorage.setItem("gamesWon", parseInt(value) > 0 ? value : 0);
-});
 
-const storedGamesLost = parseInt(localStorage.getItem("gamesLost"));
+let storedGamesLost = localStorage.getItem("gamesLost") === null ? 0 : localStorage.getItem("gamesLost");
 export const gamesLost = writable(storedGamesLost);
-gamesLost.subscribe(value => {
-    localStorage.setItem("gamesLost", parseInt(value) > 0 ? value : 0);
-});
 
-const storedCurrentStreak = parseInt(localStorage.getItem("currentStreak"));
+let storedCurrentStreak = localStorage.getItem("currentStreak") === null ? 0 : localStorage.getItem("currentStreak");
 export const currentStreak = writable(storedCurrentStreak);
-currentStreak.subscribe(value => {
-    localStorage.setItem("currentStreak", parseInt(value) > 0 ? value : 0);
-});
 
-const storedMaxStreak = parseInt(localStorage.getItem("maxStreak"));
+let storedMaxStreak = localStorage.getItem("maxStreak") === null ? 0 : localStorage.getItem("maxStreak");
 export const maxStreak = writable(storedMaxStreak);
-maxStreak.subscribe(value => {
-    localStorage.setItem("maxStreak", parseInt(value) > 0 ? value : 0);
-});
