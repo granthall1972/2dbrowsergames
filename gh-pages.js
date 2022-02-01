@@ -1,7 +1,7 @@
-import { publish } from 'gh-pages';
+var ghpages = require('gh-pages');
 
-publish(
- 'build', // path to public directory
+ghpages.publish(
+ 'public', // path to public directory
  {
   branch: 'gh-pages',
   repo: 'https://github.com/granthall1972/2dbrowsergames.git', // Update to point to your repository
