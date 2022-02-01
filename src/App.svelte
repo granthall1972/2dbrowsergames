@@ -11,13 +11,6 @@
 	let currentWord = "";
 	let todaysWord = getTodaysWord().toUpperCase();
 
-	// gamesPlayed.set(0);
-	// winPercentage.set(0);
-	// currentStreak.set(0)
-	// gamesLost.set(0);
-	// gamesWon.set(0);
-	// maxStreak.set(0);
-
 	console.log("Todays Word: " + todaysWord);
 
 	let winModalOpen = false;
@@ -182,6 +175,7 @@
 			currentStreak.set(0);
 		}
 
+		console.log("got to hereasdfasdf");
 		var gp = parseInt($gamesPlayed);
 		gp = gp + 1;
 		gamesPlayed.set(gp);
@@ -334,7 +328,7 @@
 	<WinModal isOpenModal={winModalOpen} on:closeModal={closeWinModal} />
 	<LoseModal isOpenModal={loseModalOpen} on:closeModal={closeLoseModal} />
 	<HelpModal isOpenModal={helpModalOpen} on:closeModal={closeHelpModal} />
-	<StatsModal isOpenModal={statsModalOpen} gamesPlayed={$gamesPlayed} winPercentage={$winPercentage} currentStreak={$currentStreak} maxStreak={$maxStreak} on:closeModal={closeStatsModal} />
+	<StatsModal isOpenModal={statsModalOpen} on:closeModal={closeStatsModal} />
 </div>
 
 <style>

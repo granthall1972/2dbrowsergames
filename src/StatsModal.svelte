@@ -1,15 +1,11 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+    import {gamesPlayed, winPercentage, currentStreak, maxStreak, gamesWon, gamesLost} from './store.js';
 	
     const dispatch = createEventDispatcher();
 	
     export let isOpenModal;
     export let animtationState = "opening";
-
-    export let gamesPlayed = 0;
-    export let winPercentage = 0;
-    export let currentStreak = 0;
-    export let maxStreak = 0;
 	
     function closeModal() {
         isOpenModal = false;
@@ -28,19 +24,19 @@
             <div><h1>STATISTICS</h1></div>
             <div class="statistics">
                 <div class="statistic-container">
-                    <div class="statistic">{gamesPlayed}</div>
+                    <div class="statistic">{$gamesPlayed}</div>
                     <div class="label">Played</div>
                 </div>
                 <div class="statistic-container">
-                    <div class="statistic">{winPercentage}</div>
+                    <div class="statistic">{$winPercentage}</div>
                     <div class="label">Win %</div>
                 </div>
                 <div class="statistic-container">
-                    <div class="statistic">{currentStreak}</div>
+                    <div class="statistic">{$currentStreak}</div>
                     <div class="label">Current Streak</div>
                 </div>
                 <div class="statistic-container">
-                    <div class="statistic">{maxStreak}</div>
+                    <div class="statistic">{$maxStreak}</div>
                     <div class="label">Max Streak</div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 
 import { writable } from "svelte/store";
 
+
 const storedGamesPlayed = parseInt(localStorage.getItem("gamesPlayed"));
 export const gamesPlayed = writable(storedGamesPlayed);
 gamesPlayed.subscribe(value => {
